@@ -14,3 +14,7 @@ Sample of programmers coding test - https://programmers.co.kr/learn/challenges
 3. 숫자 문자열과 영단어
    - https://programmers.co.kr/learn/courses/30/lessons/81301
    - 영어단어를 숫자로 변경
+
+4. 키패드 누르기
+   - https://programmers.co.kr/learn/courses/30/lessons/67256
+   - 왼손 오른손 키패드 누르는 순서 찾기
