@@ -29,7 +29,7 @@ def solution(new_id: str):
     # Step 2
     answer = re.sub("[^a-z0-9\-_.]", "", answer)
     # Step 3
-    answer = re.sub("[.]+", ".", answer)
+    answer = re.sub("\.[.]*", ".", answer)
     # Step 4
     answer = re.sub("^[.]", "", answer)
     answer = re.sub("[.]$", "", answer)
