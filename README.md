@@ -10,3 +10,7 @@ Sample of programmers coding test - https://programmers.co.kr/learn/challenges
 2. 신규 아이디 추천
    - https://programmers.co.kr/learn/courses/30/lessons/72410
    - 입력된 아이디와 유사하면서 규칙에 맞는 아이디를 추천해주는 프로그램을 개발
+
+3. 숫자 문자열과 영단어
+   - https://programmers.co.kr/learn/courses/30/lessons/81301
+   - 영어단어를 숫자로 변경
