@@ -50,3 +50,7 @@ Sample of programmers coding test - https://programmers.co.kr/learn/challenges
 1. 오픈 채팅방
    - https://programmers.co.kr/learn/courses/30/lessons/42888
    - 채팅방에 들어오고 나가거나, 닉네임을 변경한 기록이 담긴 문자열 배열 record가 매개변수로 주어질 때, 모든 기록이 처리된 후, 최종적으로 방을 개설한 사람이 보게 되는 메시지를 문자열 배열 형태로 return 하도록 solution 함수를 완성하라.
+
+2. 메뉴 리뉴얼
+   - https://programmers.co.kr/learn/courses/30/lessons/72411
+   - 각 손님들이 주문한 단품메뉴들이 문자열 형식으로 담긴 배열 orders, "스카피"가 추가하고 싶어하는 코스요리를 구성하는 단품메뉴들의 갯수가 담긴 배열 course가 매개변수로 주어질 때, "스카피"가 새로 추가하게 될 코스요리의 메뉴 구성을 문자열 형태로 배열에 담아 return 하도록 solution 함수를 완성해 주세요.
