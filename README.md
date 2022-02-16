@@ -32,4 +32,8 @@ Sample of programmers coding test - https://programmers.co.kr/learn/challenges
 7. 체육복
    - https://programmers.co.kr/learn/courses/30/lessons/42862
    - 전체 학생의 수 n, 체육복을 도난당한 학생들의 번호가 담긴 배열 lost, 여벌의 체육복을 가져온 학생들의 번호가 담긴 배열 reserve가 매개변수로 주어질 때, 체육수업을 들을 수 있는 학생의 최댓값을 return 하도록 solution 함수를 작성해주세요.
- 
+
+8. 폰켓몬
+   - https://programmers.co.kr/learn/courses/30/lessons/1845
+   - N마리 폰켓몬의 종류 번호가 담긴 배열 nums가 매개변수로 주어질 때, N/2마리의 폰켓몬을 선택하는 방법 중, 가장 많은 종류의 폰켓몬을 선택하는 방법을 찾아, 그때의 폰켓몬 종류 번호의 개수를 return 하도록 solution 함수를 완성해주세요.
+
