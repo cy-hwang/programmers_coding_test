@@ -44,3 +44,9 @@ Sample of programmers coding test - https://programmers.co.kr/learn/challenges
 10. 실패율
    - https://programmers.co.kr/learn/courses/30/lessons/42889
    - 전체 스테이지의 개수 N, 게임을 이용하는 사용자가 현재 멈춰있는 스테이지의 번호가 담긴 배열 stages가 매개변수로 주어질 때, 실패율이 높은 스테이지부터 내림차순으로 스테이지의 번호가 담겨있는 배열을 return 하도록 solution 함수를 완성하라.
+
+### Level 2
+
+1. 오픈 채팅방
+   - https://programmers.co.kr/learn/courses/30/lessons/42888
+   - 채팅방에 들어오고 나가거나, 닉네임을 변경한 기록이 담긴 문자열 배열 record가 매개변수로 주어질 때, 모든 기록이 처리된 후, 최종적으로 방을 개설한 사람이 보게 되는 메시지를 문자열 배열 형태로 return 하도록 solution 함수를 완성하라.
