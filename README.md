@@ -58,3 +58,8 @@ Sample of programmers coding test - https://programmers.co.kr/learn/challenges
 3. 괄호 변환
    - https://programmers.co.kr/learn/courses/30/lessons/60058
    - "균형잡힌 괄호 문자열" p가 매개변수로 주어질 때, 주어진 알고리즘을 수행해 "올바른 괄호 문자열"로 변환한 결과를 return 하도록 solution 함수를 완성해 주세요.
+
+4. 거리두기 확인하기
+   - https://programmers.co.kr/learn/courses/30/lessons/81302
+   - 5개의 대기실을 본 죠르디는 각 대기실에서 응시자들이 거리두기를 잘 기키고 있는지 알고 싶어졌습니다. 자리에 앉아있는 응시자들의 정보와 대기실 구조를 대기실별로 담은 2차원 문자열 배열 places가 매개변수로 주어집니다. 각 대기실별로 거리두기를 지키고 있으면 1을, 한 명이라도 지키지 않고 있으면 0을 배열에 담아 return 하도록 solution 함수를 완성해 주세요.
+
