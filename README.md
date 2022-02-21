@@ -66,3 +66,7 @@ Sample of programmers coding test - https://programmers.co.kr/learn/challenges
 5. 수식 최대화
    - https://programmers.co.kr/learn/courses/30/lessons/67257
    - 참가자에게 주어진 연산 수식이 담긴 문자열 expression이 매개변수로 주어질 때, 우승 시 받을 수 있는 가장 큰 상금 금액을 return 하도록 solution 함수를 완성해주세요.
+
+6. 순위 검색
+   - https://programmers.co.kr/learn/courses/30/lessons/72412
+   - 각 문의조건에 해당하는 사람들의 숫자를 순서대로 배열에 담아 return 하도록 solution 함수를 완성해 주세요.
