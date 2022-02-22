@@ -29,7 +29,7 @@ def solution(info, query):
                     o.sort()
                     total = len(o)
                     n[key] = {val: o.index(val) for val in o} if len(o) >= 1 else {}
-                    n["total"] = total
+                    n[key]["total"] = total
 
     # Dict 유저수 찾기
     answer = []
@@ -44,73 +44,56 @@ def solution(info, query):
             else:
                 target = [x[val2] for x in target]
 
-        answer.append(len([y for x in target for y in x if y >= int(grade)]))
-        # answer.append(len([x.filter() x in target for y in x if y >= int(grade)]))
+        # 이진탐색트리를 통한 순위찾기
+        temp = 0
+        for val2 in target:
+            grade_list = list(val2.keys())
+            grade_list.remove("total")
+            if len(grade_list) == 0:
+                continue
+            idx = binary_search(grade_list, 0, len(grade_list) - 1, int(grade))
+            if idx >= len(grade_list):
+                continue
+            temp += val2["total"] - val2[grade_list[idx]]
+
+        answer.append(temp)
     return answer
 
 
 def binary_search(arr, low, high, x):
     """이진 탐색 트리"""
-    if x == 8:
-        print("1")
-
-    mid = (high + low) // 2  # ceiling
+    mid = (high + low) // 2
 
     if arr[mid] == x:
         return mid
-    if low == mid:
+
+    if high == mid:
         return low + 1 if arr[mid] < x else low
 
-    elif arr[mid] > x:
-        return binary_search(arr, low, mid - 1, x)
+    if arr[mid] > x:
+        return binary_search(arr, low, max(mid - 1, low), x)
 
-    else:
-        return binary_search(arr, mid + 1, high, x)
+    return binary_search(arr, mid + 1, high, x)
 
 
 if __name__ == "__main__":
-    # print(
-    #     solution(
-    #         [
-    #             "java backend junior pizza 180",
-    #             "java backend junior pizza 160",
-    #             "java backend junior pizza 170",
-    #             "python frontend senior chicken 210",
-    #             "python frontend senior chicken 150",
-    #             "cpp backend senior pizza 260",
-    #             "java backend junior chicken 80",
-    #             "python backend senior chicken 50",
-    #         ],
-    #         [
-    #             "cpp and - and senior and pizza 250",
-    #             "- and backend and senior and - 150",
-    #             "- and - and - and chicken 100",
-    #             "- and - and - and - 150",
-    #         ],
-    #     )
-    # )
-    #       0, 1, 2, 3, 4, 5, 6, 7, 8,  9,  10, 11
-    test = [1, 3, 5, 7, 9, 11, 13, 15, 17]
-    for val in range(17):
-        print(f"value: {val}  result: {binary_search(test, 0, len(test) - 1, val)}")
-    # print(binary_search2(test, 9, 0, len(test) - 1))
-
-"""
-value: 0  result: 0
-value: 1  result: 0
-value: 2  result: 1
-value: 3  result: 1
-value: 4  result: 2
-value: 5  result: 2
-value: 6  result: 3
-value: 7  result: 3
-value: 8  result: 4 !
-value: 9  result: 4
-value: 10  result: 5
-value: 11  result: 5
-value: 12  result: 6
-value: 13  result: 6
-value: 14  result: 7
-value: 15  result: 7
-value: 16  result: 7
-"""
+    print(
+        solution(
+            [
+                "java backend junior pizza 150",
+                "python frontend senior chicken 210",
+                "python frontend senior chicken 150",
+                "cpp backend senior pizza 260",
+                "java backend junior chicken 80",
+                "python backend senior chicken 50",
+            ],
+            [
+                "java and backend and junior and pizza 100",
+                "python and frontend and senior and chicken 200",
+                "cpp and - and senior and pizza 250",
+                "- and backend and senior and - 150",
+                "- and - and - and chicken 100",
+                "- and - and - and - 150",
+            ],
+        )
+    )
