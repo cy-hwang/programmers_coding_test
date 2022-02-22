@@ -70,3 +70,11 @@ Sample of programmers coding test - https://programmers.co.kr/learn/challenges
 6. 순위 검색
    - https://programmers.co.kr/learn/courses/30/lessons/72412
    - 각 문의조건에 해당하는 사람들의 숫자를 순서대로 배열에 담아 return 하도록 solution 함수를 완성해 주세요.
+
+7. 튜플
+   - https://programmers.co.kr/learn/courses/30/lessons/64065
+   - 특정 튜플을 표현하는 집합이 담긴 문자열 s가 매개변수로 주어질 때, s가 표현하는 튜플을 배열에 담아 return 하도록 solution 함수를 완성해주세요.
+
+8. 후보키
+   - https://programmers.co.kr/learn/courses/30/lessons/42890
+   - 릴레이션을 나타내는 문자열 배열 relation이 매개변수로 주어질 때, 이 릴레이션에서 후보 키의 개수를 return 하도록 solution 함수를 완성하라.
