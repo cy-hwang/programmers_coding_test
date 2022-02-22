@@ -6,31 +6,40 @@ def solution(relation):
     # [[100, 200, ...], [ryan, apeach, ...], ...]
     attribute_list = [list(x) for x in zip(*relation)]
 
-    return calc(list(range(len(attribute_list))), attribute_list, 1, 0, len(relation))
+    # 후보키 조합 리스트업
+    combination = []
+    attribute_length = len(attribute_list)
+    for val in range(1, attribute_length + 1):
+        combination.extend(list(combinations(range(attribute_length), val)))
+
+    return check_candidate(combination, attribute_list, 0, len(relation))
 
 
-def calc(candidate: list, user: list, count: int, counter: int, user_count: int):
+def check_candidate(candidate: list, user: list, count: int, num_key: int):
     """재귀적 계산식"""
-    # candidate에 대해 count 개수에 해당하는 조합 리스트
-    comb = list(combinations(candidate, count))
-    erase_target = []
-    for val in comb:
-
+    check_all = True
+    candidate_key = tuple()
+    for val in candidate:
         new_list = user[val[0]]
         for idx in range(1, len(val)):
+            # [100ryan, 200apeach, ...]
             new_list = list(map(str.__add__, new_list, user[val[idx]]))
 
-        if len(set(new_list)) == user_count:
-            print(val)
-            counter += 1
-            erase_target += val
+        # 후보키여부 확인
+        if len(set(new_list)) == num_key:
+            check_all = False
+            candidate_key = val
+            break
 
-    if count >= len(candidate):
-        return counter
+    if not check_all:
+        count += 1
+        # 후보키가 포함된 조합 제거
+        candidate = [
+            val for val in candidate if not set(candidate_key).issubset(set(val))
+        ]
+        return check_candidate(candidate, user, count, num_key)
 
-    candidate = [val for val in candidate if val not in set(erase_target)]
-
-    return calc(candidate, user, count + 1, counter, user_count)
+    return count
 
 
 if __name__ == "__main__":
