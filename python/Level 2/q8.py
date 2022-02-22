@@ -3,14 +3,15 @@ from itertools import combinations
 
 def solution(relation):
     """후보키"""
-    user_count = len(relation)
+    # [[100, 200, ...], [ryan, apeach, ...], ...]
     attribute_list = [list(x) for x in zip(*relation)]
-    candidate = list(range(0, len(attribute_list)))
-    return calc(candidate, attribute_list, 1, 0, user_count)
+
+    return calc(list(range(len(attribute_list))), attribute_list, 1, 0, len(relation))
 
 
 def calc(candidate: list, user: list, count: int, counter: int, user_count: int):
     """재귀적 계산식"""
+    # candidate에 대해 count 개수에 해당하는 조합 리스트
     comb = list(combinations(candidate, count))
     erase_target = []
     for val in comb:
@@ -20,6 +21,7 @@ def calc(candidate: list, user: list, count: int, counter: int, user_count: int)
             new_list = list(map(str.__add__, new_list, user[val[idx]]))
 
         if len(set(new_list)) == user_count:
+            print(val)
             counter += 1
             erase_target += val
 
@@ -32,18 +34,13 @@ def calc(candidate: list, user: list, count: int, counter: int, user_count: int)
 
 
 if __name__ == "__main__":
-    # A = [[1, 2, 3], [4, 5, 6]]
-    # B = [list(x) for x in zip(*A)]  # without map
-    # print(B)
     print(
         solution(
             [
-                ["100", "ryan", "music", "2"],
-                ["200", "apeach", "math", "2"],
-                ["300", "tube", "computer", "3"],
-                ["400", "con", "computer", "4"],
-                ["500", "muzi", "music", "3"],
-                ["600", "apeach", "music", "2"],
+                ["a", "1", "aaa", "c", "ng"],
+                ["b", "1", "bbb", "c", "g"],
+                ["c", "1", "aaa", "d", "ng"],
+                ["d", "2", "bbb", "d", "ng"],
             ]
         )
     )
