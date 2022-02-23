@@ -20,10 +20,8 @@ def check_candidate(candidate: list, user: list, count: int, num_key: int):
     check_all = True
     candidate_key = tuple()
     for val in candidate:
-        new_list = user[val[0]]
-        for idx in range(1, len(val)):
-            # [100ryan, 200apeach, ...]
-            new_list = list(map(str.__add__, new_list, user[val[idx]]))
+        # [('a', '1'), ('b', '1'), ...]
+        new_list = [tuple([user[j][i] for j in val]) for i in range(num_key)]
 
         # 후보키여부 확인
         if len(set(new_list)) == num_key:
