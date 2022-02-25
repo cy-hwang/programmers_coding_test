@@ -82,3 +82,7 @@ Sample of programmers coding test - https://programmers.co.kr/learn/challenges
 9. 프렌즈4블록
    - https://programmers.co.kr/learn/courses/30/lessons/17679
    - 입력으로 블록의 첫 배치가 주어졌을 때, 지워지는 블록은 모두 몇 개인지 판단하는 프로그램을 제작하라.
+
+10. 캐시
+   - https://programmers.co.kr/learn/courses/30/lessons/17680
+   - 어피치에게 시달리는 제이지를 도와, DB 캐시를 적용할 때 캐시 크기에 따른 실행시간 측정 프로그램을 작성하시오.
