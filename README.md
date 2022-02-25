@@ -78,3 +78,7 @@ Sample of programmers coding test - https://programmers.co.kr/learn/challenges
 8. 후보키
    - https://programmers.co.kr/learn/courses/30/lessons/42890
    - 릴레이션을 나타내는 문자열 배열 relation이 매개변수로 주어질 때, 이 릴레이션에서 후보 키의 개수를 return 하도록 solution 함수를 완성하라.
+
+9. 프렌즈4블록
+   - https://programmers.co.kr/learn/courses/30/lessons/17679
+   - 입력으로 블록의 첫 배치가 주어졌을 때, 지워지는 블록은 모두 몇 개인지 판단하는 프로그램을 제작하라.

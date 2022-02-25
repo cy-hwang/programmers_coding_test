@@ -1,59 +1,46 @@
-from tabnanny import check
-
-
 def solution(m, n, board):
-    """t"""
+    """프렌즈4블록"""
     board = [list(val) for val in board]
-    new_board = [list(x) for x in zip(*board)]
-    print(new_board)
-
-    check_match(m, n, new_board, 0)
+    n_board = [list(x) for x in zip(*board)]
 
     answer = 0
+
+    while True:
+        # 일치대상 확인
+        erase_target = []
+        for col in range(n - 1):
+            for row in range(m - 1):
+                if n_board[col][row] != "0" and set(n_board[col][row]) == set(
+                    [
+                        n_board[col + 1][row],
+                        n_board[col][row + 1],
+                        n_board[col + 1][row + 1],
+                    ]
+                ):
+                    erase_target += [
+                        (col, row),
+                        (col + 1, row),
+                        (col, row + 1),
+                        (col + 1, row + 1),
+                    ]
+
+        erase_target = list(set(erase_target))
+        if len(erase_target) == 0:
+            break
+
+        answer += len(erase_target)
+
+        # 일치 대상 제거
+        for val in erase_target:
+            n_board[val[0]][val[1]] = "0"
+
+        # 빈칸 채우기
+        for key, col in enumerate(n_board):
+            non_zero = [val for val in col if val != "0"]
+            n_board[key] = ["0"] * (len(col) - len(non_zero)) + non_zero
 
     return answer
 
 
-def check_match(m, n, board: list, count: int):
-    """일치 대상 제거"""
-    # 일치대상 확인
-    erase_target = []
-    for col in range(m - 1):
-        for row in range(n - 1):
-            if set(board[col][row]) == set(
-                [board[col + 1][row], board[col][row + 1], board[col + 1][row + 1]]
-            ):
-                erase_target.append((col, row))
-                erase_target.append((col + 1, row))
-                erase_target.append((col, row + 1))
-                erase_target.append((col + 1, row + 1))
-
-    erase_target = list(set(erase_target))
-    if len(erase_target) == 0:
-        return count
-
-    # 일치 대상 제거
-    for val in erase_target:
-        board[val[0]][val[1]] = "0"
-
-    for row in range(n):
-        print(board)
-        start_idx = -1
-        end_idx = -1
-        for col in range(m - 1, -1, -1):
-            if board[col][row] == "0":
-                start_idx = col
-            else:
-                end_idx = col
-
-                if end_idx > start_idx:
-                    temp = board[col][end_idx]
-                    board[col][end_idx] = board[col][start_idx]
-                    board[col][start_idx] = temp
-                    start_idx = end_idx
-
-    return check_match(m, n, board, count)
-
-
 if __name__ == "__main__":
-    print(solution(6, 6, ["TTTANT", "RRFACC", "RRRFCC", "TRRRAA", "TTMMMF", "TMMTTJ"]))
+    print(solution(4, 5, ["CCBDE", "AAADE", "AAABF", "CCBBF"]))
