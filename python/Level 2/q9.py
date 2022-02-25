@@ -10,12 +10,12 @@ def solution(m, n, board):
         erase_target = []
         for col in range(n - 1):
             for row in range(m - 1):
-                if n_board[col][row] != "0" and set(n_board[col][row]) == set(
-                    [
-                        n_board[col + 1][row],
-                        n_board[col][row + 1],
-                        n_board[col + 1][row + 1],
-                    ]
+                if (
+                    n_board[col][row]
+                    == n_board[col + 1][row]
+                    == n_board[col][row + 1]
+                    == n_board[col + 1][row + 1]
+                    != "0"
                 ):
                     erase_target += [
                         (col, row),
@@ -36,8 +36,7 @@ def solution(m, n, board):
 
         # 빈칸 채우기
         for key, col in enumerate(n_board):
-            non_zero = [val for val in col if val != "0"]
-            n_board[key] = ["0"] * (len(col) - len(non_zero)) + non_zero
+            n_board[key] = ["0"] * (col.count("0")) + [val for val in col if val != "0"]
 
     return answer
 
