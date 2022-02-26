@@ -86,3 +86,7 @@ Sample of programmers coding test - https://programmers.co.kr/learn/challenges
 10. 캐시
    - https://programmers.co.kr/learn/courses/30/lessons/17680
    - 어피치에게 시달리는 제이지를 도와, DB 캐시를 적용할 때 캐시 크기에 따른 실행시간 측정 프로그램을 작성하시오.
+
+11. K진수서 소수 개수 구하기
+   - https://programmers.co.kr/learn/courses/30/lessons/92335
+   - 정수 n과 k가 매개변수로 주어집니다. n을 k진수로 바꿨을 때, 변환된 수 안에서 찾을 수 있는 위 조건에 맞는 소수의 개수를 return 하도록 solution 함수를 완성해 주세요.
