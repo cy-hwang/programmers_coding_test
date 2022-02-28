@@ -90,3 +90,7 @@ Sample of programmers coding test - https://programmers.co.kr/learn/challenges
 11. K진수서 소수 개수 구하기
    - https://programmers.co.kr/learn/courses/30/lessons/92335
    - 정수 n과 k가 매개변수로 주어집니다. n을 k진수로 바꿨을 때, 변환된 수 안에서 찾을 수 있는 위 조건에 맞는 소수의 개수를 return 하도록 solution 함수를 완성해 주세요.
+
+12. 주차요금 계산
+   - https://programmers.co.kr/learn/courses/30/lessons/92341
+   - 차량 번호가 작은 자동차부터 청구할 주차 요금을 차례대로 정수 배열에 담아서 return 하도록 solution 함수를 완성해주세요.
